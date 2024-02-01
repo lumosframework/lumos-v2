@@ -1,8 +1,8 @@
 <style>
 /* theme light */
 :root,
-[theme="1"],
-[theme="2"] [theme="-1"] {
+[data-theme="1"],
+[data-theme="2"] [data-theme="-1"] {
 	--theme--background: var(--swatch--light);
 	--theme--text: var(--swatch--dark);
   --theme--border: var(--swatch--dark-fade);
@@ -22,9 +22,9 @@
   --button2--border-hover: var(--swatch--dark);
 }
 /* theme dark */
-[theme="2"],
-[theme="-1"],
-[theme="1"] [theme="-1"] {
+[data-theme="2"],
+[data-theme="-1"],
+[data-theme="1"] [data-theme="-1"] {
 	--theme--background: var(--swatch--dark);
 	--theme--text: var(--swatch--light);
   --theme--border: var(--swatch--light-fade);
@@ -44,7 +44,7 @@
   --button2--border-hover: var(--swatch--brand);
 }
 /* button outlined */
-[button-style="2"] {
+[data-button-style="2"] {
   --button--background: var(--button2--background);
   --button--text: var(--button2--text);
   --button--border: var(--button2--border);
@@ -53,7 +53,7 @@
   --button--border-hover: var(--button2--border-hover);
 }
 /* apply colors */
-:is(c, :where([theme]:not([theme="0"]))) {
+:is(c, :where([data-theme]:not([data-theme="0"]))) {
 	background-color: var(--theme--background);
 	color: var(--theme--text);
 }
