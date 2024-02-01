@@ -46,39 +46,44 @@ img::selection {
 .w-richtext > *:last-child { 
 	margin-bottom: 0;
 }
-.wf-empty[class*="--"] { 
+.wf-empty[class*="--"], video.wf-empty { 
 	padding: 0;
+}
+video {
+	width: 100%;
+	object-fit: cover;
+}
+svg {
+	display: block;
 }
 section, header, footer {
 	position: relative;
 }
-
 /* container styles */
-container {
-	display: block;
+:is(c, :where([data-container])) {
 	position: relative;
-  container-type: inline-size;
+	container-type: inline-size;
 	width: 100%;
 	max-width: var(--max-width--main);
 	margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--padding-horizontal--main);
-  padding-right: var(--padding-horizontal--main);
+	margin-right: auto;
+	padding-left: var(--padding-horizontal--main);
+	padding-right: var(--padding-horizontal--main);
 	padding-top: var(--padding-vertical--main);
 	padding-bottom: var(--padding-vertical--main);
 }
 /* small */
-[padding-top="1"] { padding-top: var(--padding-vertical--small); }
-[padding-bottom="1"] { padding-bottom: var(--padding-vertical--small); }
+:is(c, :where([data-padding-top="1"])) { padding-top: var(--padding-vertical--small); }
+:is(c, :where([data-padding-bottom="1"])) { padding-bottom: var(--padding-vertical--small); }
 /* medium */
-[padding-top="2"] { padding-top: var(--padding-vertical--main); }
-[padding-bottom="2"] { padding-bottom: var(--padding-vertical--main); }
+:is(c, :where([data-padding-top="2"])) { padding-top: var(--padding-vertical--main); }
+:is(c, :where([data-padding-bottom="2"])) { padding-bottom: var(--padding-vertical--main); }
 /* large */
-[padding-top="3"] { padding-top: var(--padding-vertical--large); }
-[padding-bottom="3"] { padding-bottom: var(--padding-vertical--large); }
+:is(c, :where([data-padding-top="3"])) { padding-top: var(--padding-vertical--large); }
+:is(c, :where([data-padding-bottom="3"])) { padding-bottom: var(--padding-vertical--large); }
 /* none */
-[padding-top="0"] { padding-top: 0; }
-[padding-bottom="0"] { padding-bottom: 0; }
+:is(c, :where([data-padding-top="0"])) { padding-top: 0; }
+:is(c, :where([data-padding-bottom="0"])) { padding-bottom: 0; }
 
 /* line clamp */
 :is(c, :where([class*="lc1"], [class*="lc2"], [class*="lc3"], [class*="lc4"])) {
