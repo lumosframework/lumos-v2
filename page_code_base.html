@@ -29,7 +29,6 @@ body {
 button {
 	background-color: unset;
   padding: unset;
-  text-align: inherit;
 }
 img::selection {
   background: transparent;
@@ -46,44 +45,41 @@ img::selection {
 .w-richtext > *:last-child { 
 	margin-bottom: 0;
 }
-.wf-empty[class*="--"], video.wf-empty { 
+.wf-empty[class*="--"] { 
 	padding: 0;
 }
-video {
-	width: 100%;
-	object-fit: cover;
-}
-svg {
-	display: block;
-}
-section, header, footer {
+
+/* section styles */
+main section, header, footer {
 	position: relative;
-}
-/* container styles */
-:is(c, :where([data-container])) {
-	position: relative;
-	container-type: inline-size;
-	width: 100%;
-	max-width: var(--max-width--main);
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: var(--padding-horizontal--main);
-	padding-right: var(--padding-horizontal--main);
-	padding-top: var(--padding-vertical--main);
-	padding-bottom: var(--padding-vertical--main);
+  padding-top: var(--section-vertical--main);
+	padding-bottom: var(--section-vertical--main);
 }
 /* small */
-:is(c, :where([data-padding-top="1"])) { padding-top: var(--padding-vertical--small); }
-:is(c, :where([data-padding-bottom="1"])) { padding-bottom: var(--padding-vertical--small); }
+[section-top="1"] { padding-top: var(--section-vertical--small); }
+[section-bottom="1"] { padding-bottom: var(--section-vertical--small); }
 /* medium */
-:is(c, :where([data-padding-top="2"])) { padding-top: var(--padding-vertical--main); }
-:is(c, :where([data-padding-bottom="2"])) { padding-bottom: var(--padding-vertical--main); }
+[section-top="2"] { padding-top: var(--section-vertical--main); }
+[section-bottom="2"] { padding-bottom: var(--section-vertical--main); }
 /* large */
-:is(c, :where([data-padding-top="3"])) { padding-top: var(--padding-vertical--large); }
-:is(c, :where([data-padding-bottom="3"])) { padding-bottom: var(--padding-vertical--large); }
+[section-top="3"] { padding-top: var(--section-vertical--large); }
+[section-bottom="3"] { padding-bottom: var(--section-vertical--large); }
 /* none */
-:is(c, :where([data-padding-top="0"])) { padding-top: 0; }
-:is(c, :where([data-padding-bottom="0"])) { padding-bottom: 0; }
+[section-top="0"] { padding-top: 0; }
+[section-bottom="0"] { padding-bottom: 0; }
+
+/* container styles */
+container {
+	display: block;
+	position: relative;
+  container-type: inline-size;
+	width: 100%;
+	max-width: var(--container--main);
+  padding-left: var(--page-padding--main);
+  padding-right: var(--page-padding--main);
+	margin-left: auto;
+  margin-right: auto;
+}
 
 /* line clamp */
 :is(c, :where([class*="lc1"], [class*="lc2"], [class*="lc3"], [class*="lc4"])) {
@@ -120,7 +116,6 @@ section, header, footer {
 }
 
 /* layout controller */
-/**%#**/
 :is(c, :where([class*="gd1"])) {
   display: grid;
   grid-row-gap: var(--grid-gap--main);
@@ -140,5 +135,4 @@ section, header, footer {
   grid-row-start: auto !important;
   grid-row-end: span var(--rs) !important;
 }
-/**#%**/
 </style>
