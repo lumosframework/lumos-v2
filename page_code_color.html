@@ -53,7 +53,7 @@
   --button--border-hover: var(--button2--border-hover);
 }
 /* apply colors */
-:where([theme]:not([theme="0"])) {
+:is(c, :where([theme]:not([theme="0"]))) {
 	background-color: var(--theme--background);
 	color: var(--theme--text);
 }
