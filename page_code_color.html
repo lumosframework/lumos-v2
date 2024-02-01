@@ -1,0 +1,60 @@
+<style>
+/* theme light */
+:root,
+[theme="1"],
+[theme="2"] [invert="true"] {
+	--theme--background: var(--swatch--light);
+	--theme--text: var(--swatch--dark);
+  --theme--border: var(--swatch--dark-fade);
+	/* button */
+  --button--background: var(--swatch--brand);
+  --button--text: var(--swatch--dark);
+  --button--border: var(--swatch--brand);
+  --button--background-hover: var(--swatch--dark);
+  --button--text-hover: var(--swatch--light);
+  --button--border-hover: var(--swatch--dark);
+	/* button */
+  --button2--background: var(--swatch--transparent);
+  --button2--text: var(--swatch--dark);
+  --button2--border: var(--swatch--dark);
+  --button2--background-hover: var(--swatch--dark);
+  --button2--text-hover: var(--swatch--light);
+  --button2--border-hover: var(--swatch--dark);
+}
+/* theme dark */
+[theme="2"],
+[invert="true"],
+[theme="1"] [invert="true"] {
+	--theme--background: var(--swatch--dark);
+	--theme--text: var(--swatch--light);
+  --theme--border: var(--swatch--light-fade);
+	/* button */
+  --button--background: var(--swatch--brand);
+  --button--text: var(--swatch--dark);
+  --button--border: var(--swatch--brand);
+  --button--background-hover: var(--swatch--light);
+  --button--text-hover: var(--swatch--dark);
+  --button--border-hover: var(--swatch--light);
+	/* button */
+  --button2--background: var(--swatch--transparent);
+  --button2--text: var(--swatch--light);
+  --button2--border: var(--swatch--brand);
+  --button2--background-hover: var(--swatch--brand);
+  --button2--text-hover: var(--swatch--dark);
+  --button2--border-hover: var(--swatch--brand);
+}
+/* button outlined */
+[button-style="2"] {
+  --button--background: var(--button2--background);
+  --button--text: var(--button2--text);
+  --button--border: var(--button2--border);
+  --button--background-hover: var(--button2--background-hover);
+  --button--text-hover: var(--button2--text-hover);
+  --button--border-hover: var(--button2--border-hover);
+}
+/* apply colors */
+:where([theme="1"], [theme="2"], [invert="true"]) {
+	background-color: var(--theme--background);
+	color: var(--theme--text);
+}
+</style>
