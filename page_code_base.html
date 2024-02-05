@@ -11,8 +11,6 @@
 	--font-weight--700: 700;
 	--font-weight--800: 800;
 	--font-weight--900: 900;
-	--line-height--inherit: inherit;
-	--letter-spacing--inherit: inherit;
 	--text-transform--none: none;
 	--text-transform--uppercase: uppercase;
 	--text-transform--capitalize: capitalize;
@@ -21,32 +19,32 @@
 	--swatch--currentcolor: currentColor;
 	--swatch--inherit: inherit;
 }
-body { 
+body {
 	overscroll-behavior: none;
 	font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 button {
 	background-color: unset;
-  padding: unset;
-  text-align: inherit;
+	padding: unset;
+	text-align: inherit;
 }
 img::selection {
-  background: transparent;
+	background: transparent;
 }
 .page_wrap {
 	overflow: clip;
 }
-:is(h1, h2, h3, h4, h5, h6, p) a { 
+:is(h1, h2, h3, h4, h5, h6, p) a {
 	text-decoration: underline;
 }
-.w-richtext > *:first-child { 
+.w-richtext > *:first-child {
 	margin-top: 0;
 }
-.w-richtext > *:last-child { 
+.w-richtext > *:last-child {
 	margin-bottom: 0;
 }
-.wf-empty[class*="--"], video.wf-empty { 
+.wf-empty[class*="--"], video.wf-empty {
 	padding: 0;
 }
 video {
@@ -59,31 +57,21 @@ svg {
 section, header, footer {
 	position: relative;
 }
-/* container styles */
-:is(c, :where([data-container])) {
-	position: relative;
+.container {
 	container-type: inline-size;
-	width: 100%;
-	max-width: var(--max-width--main);
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: var(--padding-horizontal--main);
-	padding-right: var(--padding-horizontal--main);
-	padding-top: var(--padding-vertical--main);
-	padding-bottom: var(--padding-vertical--main);
 }
-/* small */
-:is(c, :where([data-padding-top="1"])) { padding-top: var(--padding-vertical--small); }
-:is(c, :where([data-padding-bottom="1"])) { padding-bottom: var(--padding-vertical--small); }
-/* medium */
-:is(c, :where([data-padding-top="2"])) { padding-top: var(--padding-vertical--main); }
-:is(c, :where([data-padding-bottom="2"])) { padding-bottom: var(--padding-vertical--main); }
-/* large */
-:is(c, :where([data-padding-top="3"])) { padding-top: var(--padding-vertical--large); }
-:is(c, :where([data-padding-bottom="3"])) { padding-bottom: var(--padding-vertical--large); }
-/* none */
-:is(c, :where([data-padding-top="0"])) { padding-top: 0; }
-:is(c, :where([data-padding-bottom="0"])) { padding-bottom: 0; }
+
+[data-padding-top="none"] { padding-top: 0; }
+[data-padding-bottom="none"] { padding-bottom: 0; }
+
+[data-padding-top="small"] { padding-top: var(--padding-vertical--small); }
+[data-padding-bottom="small"] { padding-bottom: var(--padding-vertical--small); }
+
+[data-padding-top="main"] { padding-top: var(--padding-vertical--main); }
+[data-padding-bottom="main"] { padding-bottom: var(--padding-vertical--main); }
+
+[data-padding-top="large"] { padding-top: var(--padding-vertical--large); }
+[data-padding-bottom="large"] { padding-bottom: var(--padding-vertical--large); }
 
 /* line clamp */
 :is(c, :where([class*="lc1"], [class*="lc2"], [class*="lc3"], [class*="lc4"])) {
@@ -97,7 +85,7 @@ section, header, footer {
 [class*="lc4"] { -webkit-line-clamp: 4; }
 
 /* text wrap */
-[class*="tw1"] { 
+[class*="tw1"] {
 	text-wrap: balance;
 }
 
@@ -107,38 +95,38 @@ section, header, footer {
 /**}%**/
 
 /* cover */
-:is(c, :where([class*="cf1"])) { 
+:is(c, :where([class*="cf1"])) {
 	width: 100%;
-  height: 100%;
+	height: 100%;
 }
-:is(c, :where([class*="ca1"])) { 
+:is(c, :where([class*="ca1"])) {
 	position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 }
 
 /* layout controller */
 /**%#**/
 :is(c, :where([class*="gd1"])) {
-  display: grid;
-  grid-row-gap: var(--grid-gap--main);
-  grid-column-gap: var(--grid-gap--main);
+	display: grid;
+	grid-row-gap: var(--grid-gap--main);
+	grid-column-gap: var(--grid-gap--main);
 }
 [class*="gd1"] {
-  grid-template-columns: repeat(var(--cc), minmax(0, 1fr));
-  grid-template-rows: auto;
-  --cc: 1;
-  --cs: 1;
-  --ct: auto;
-  --rs: 1;
+	grid-template-columns: repeat(var(--cc), minmax(0, 1fr));
+	grid-template-rows: auto;
+	--cc: 1;
+	--cs: 1;
+	--ct: auto;
+	--rs: 1;
 }
 [class*="gd1"] > * {
-  grid-column-start: var(--ct) !important;
-  grid-column-end: span var(--cs) !important;
-  grid-row-start: auto !important;
-  grid-row-end: span var(--rs) !important;
+	grid-column-start: var(--ct) !important;
+	grid-column-end: span var(--cs) !important;
+	grid-row-start: auto !important;
+	grid-row-end: span var(--rs) !important;
 }
 /**#%**/
 </style>
