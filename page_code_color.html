@@ -1,59 +1,59 @@
 <style>
 /* theme light */
 :root,
-[data-theme="1"],
-[data-theme="2"] [data-theme="-1"] {
+[data-theme="light"],
+[data-theme="dark"] [data-theme="invert"] {
 	--theme--background: var(--swatch--light);
 	--theme--text: var(--swatch--dark);
-  --theme--border: var(--swatch--dark-fade);
-	/* button */
-  --button--background: var(--swatch--brand);
-  --button--text: var(--swatch--dark);
-  --button--border: var(--swatch--brand);
-  --button--background-hover: var(--swatch--dark);
-  --button--text-hover: var(--swatch--light);
-  --button--border-hover: var(--swatch--dark);
-	/* button */
-  --button2--background: var(--swatch--transparent);
-  --button2--text: var(--swatch--dark);
-  --button2--border: var(--swatch--dark);
-  --button2--background-hover: var(--swatch--dark);
-  --button2--text-hover: var(--swatch--light);
-  --button2--border-hover: var(--swatch--dark);
+	--theme--border: var(--swatch--dark-fade);
+	/* button solid */
+	--button--background: var(--swatch--brand);
+	--button--text: var(--swatch--dark);
+	--button--border: var(--swatch--brand);
+	--button--background-hover: var(--swatch--dark);
+	--button--text-hover: var(--swatch--light);
+	--button--border-hover: var(--swatch--dark);
+	/* button outlined */
+	--button-outlined--background: var(--swatch--transparent);
+	--button-outlined--text: var(--swatch--dark);
+	--button-outlined--border: var(--swatch--dark);
+	--button-outlined--background-hover: var(--swatch--dark);
+	--button-outlined--text-hover: var(--swatch--light);
+	--button-outlined--border-hover: var(--swatch--dark);
 }
 /* theme dark */
-[data-theme="2"],
-[data-theme="-1"],
-[data-theme="1"] [data-theme="-1"] {
+[data-theme="dark"],
+[data-theme="invert"],
+[data-theme="light"] [data-theme="invert"] {
 	--theme--background: var(--swatch--dark);
 	--theme--text: var(--swatch--light);
-  --theme--border: var(--swatch--light-fade);
-	/* button */
-  --button--background: var(--swatch--brand);
-  --button--text: var(--swatch--dark);
-  --button--border: var(--swatch--brand);
-  --button--background-hover: var(--swatch--light);
-  --button--text-hover: var(--swatch--dark);
-  --button--border-hover: var(--swatch--light);
-	/* button */
-  --button2--background: var(--swatch--transparent);
-  --button2--text: var(--swatch--light);
-  --button2--border: var(--swatch--brand);
-  --button2--background-hover: var(--swatch--brand);
-  --button2--text-hover: var(--swatch--dark);
-  --button2--border-hover: var(--swatch--brand);
+	--theme--border: var(--swatch--light-fade);
+	/* button solid */
+	--button--background: var(--swatch--brand);
+	--button--text: var(--swatch--dark);
+	--button--border: var(--swatch--brand);
+	--button--background-hover: var(--swatch--light);
+	--button--text-hover: var(--swatch--dark);
+	--button--border-hover: var(--swatch--light);
+	/* button outlined */
+	--button-outlined--background: var(--swatch--transparent);
+	--button-outlined--text: var(--swatch--light);
+	--button-outlined--border: var(--swatch--brand);
+	--button-outlined--background-hover: var(--swatch--brand);
+	--button-outlined--text-hover: var(--swatch--dark);
+	--button-outlined--border-hover: var(--swatch--brand);
 }
 /* button outlined */
-[data-button-style="2"] {
-  --button--background: var(--button2--background);
-  --button--text: var(--button2--text);
-  --button--border: var(--button2--border);
-  --button--background-hover: var(--button2--background-hover);
-  --button--text-hover: var(--button2--text-hover);
-  --button--border-hover: var(--button2--border-hover);
+[data-button-style="outlined"] {
+	--button--background: var(--button-outlined--background);
+	--button--text: var(--button-outlined--text);
+	--button--border: var(--button-outlined--border);
+	--button--background-hover: var(--button-outlined--background-hover);
+	--button--text-hover: var(--button-outlined--text-hover);
+	--button--border-hover: var(--button-outlined--border-hover);
 }
 /* apply colors */
-:is(c, :where([data-theme]:not([data-theme="0"]))) {
+:is(c, :where([data-theme]:not([data-theme="inherit"]))) {
 	background-color: var(--theme--background);
 	color: var(--theme--text);
 }
