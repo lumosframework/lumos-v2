@@ -1,6 +1,6 @@
 <style>
 :root {
-	--font-family--inherit: inherit;
+	--font--inherit: inherit;
 	--font-weight--inherit: inherit;
 	--font-weight--100: 100;
 	--font-weight--200: 200;
@@ -61,8 +61,8 @@ section, header, footer {
 	container-type: inline-size;
 }
 
-[data-padding-top="none"] { padding-top: 0; }
-[data-padding-bottom="none"] { padding-bottom: 0; }
+[data-padding-top="none"] { padding-top: var(--padding-vertical--none); }
+[data-padding-bottom="none"] { padding-bottom: var(--padding-vertical--none); }
 
 [data-padding-top="small"] { padding-top: var(--padding-vertical--small); }
 [data-padding-bottom="small"] { padding-bottom: var(--padding-vertical--small); }
