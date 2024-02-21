@@ -20,7 +20,6 @@
 	--swatch--inherit: inherit;
 }
 body {
-	overscroll-behavior: none;
 	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
 }
@@ -31,9 +30,6 @@ button {
 }
 img::selection {
 	background: transparent;
-}
-.page_wrap {
-	overflow: clip;
 }
 :is(h1, h2, h3, h4, h5, h6, p) a {
 	text-decoration: underline;
@@ -56,9 +52,6 @@ svg {
 }
 section, header, footer {
 	position: relative;
-}
-.container {
-	container-type: inline-size;
 }
 
 [data-padding-top="none"] { padding-top: var(--padding-vertical--none); }
