@@ -65,54 +65,14 @@ section, header, footer {
 [data-padding-bottom="large"] { padding-bottom: var(--padding-vertical--large); }
 
 /* line clamp */
-:is(c, :where([class*="lc1"], [class*="lc2"], [class*="lc3"], [class*="lc4"])) {
+.u-line-clamp-1, .u-line-clamp-2, .u-line-clamp-3, .u-line-clamp-4 {
 	display: -webkit-box;
 	overflow: hidden;
 	-webkit-line-clamp: 1;
 	-webkit-box-orient: vertical;
 }
-[class*="lc2"] { -webkit-line-clamp: 2; }
-[class*="lc3"] { -webkit-line-clamp: 3; }
-[class*="lc4"] { -webkit-line-clamp: 4; }
+.u-line-clamp-2 { -webkit-line-clamp: 2; }
+.u-line-clamp-3 { -webkit-line-clamp: 3; }
+.u-line-clamp-4 { -webkit-line-clamp: 4; }
 
-/**%{{pointer-events: children}**/
-:is(c, :where([class*="pe1"])) { pointer-events: none; }
-:is(c, :where([class*="pe1"] > *)) { pointer-events: auto; }
-/**}%**/
-
-/* cover */
-:is(c, :where([class*="cf1"])) {
-	width: 100%;
-	height: 100%;
-}
-:is(c, :where([class*="ca1"])) {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-}
-
-/* layout controller */
-/**%#**/
-:is(c, :where([class*="gd1"])) {
-	display: grid;
-	grid-row-gap: var(--grid-gap--main);
-	grid-column-gap: var(--grid-gap--main);
-}
-[class*="gd1"] {
-	grid-template-columns: repeat(var(--cc), minmax(0, 1fr));
-	grid-template-rows: auto;
-	--cc: 1;
-	--cs: 1;
-	--ct: auto;
-	--rs: 1;
-}
-[class*="gd1"] > * {
-	grid-column-start: var(--ct) !important;
-	grid-column-end: span var(--cs) !important;
-	grid-row-start: auto !important;
-	grid-row-end: span var(--rs) !important;
-}
-/**#%**/
 </style>
