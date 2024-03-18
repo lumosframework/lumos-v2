@@ -6,20 +6,20 @@
 	--theme--background: var(--swatch--light);
 	--theme--text: var(--swatch--dark);
 	--theme--border: var(--swatch--dark-fade);
-	/* button solid */
+	/* button primary */
 	--button--background: var(--swatch--brand);
-	--button--text: var(--swatch--dark);
+	--button--text: var(--swatch--brand-text);
 	--button--border: var(--swatch--brand);
 	--button--background-hover: var(--swatch--dark);
 	--button--text-hover: var(--swatch--light);
 	--button--border-hover: var(--swatch--dark);
-	/* button outlined */
-	--button-outlined--background: var(--swatch--transparent);
-	--button-outlined--text: var(--swatch--dark);
-	--button-outlined--border: var(--swatch--dark-fade);
-	--button-outlined--background-hover: var(--swatch--brand);
-	--button-outlined--text-hover: var(--swatch--dark);
-	--button-outlined--border-hover: var(--swatch--brand);
+	/* button secondary */
+	--button-secondary--background: var(--swatch--transparent);
+	--button-secondary--text: var(--swatch--dark);
+	--button-secondary--border: var(--swatch--dark-fade);
+	--button-secondary--background-hover: var(--swatch--brand);
+	--button-secondary--text-hover: var(--swatch--brand-text);
+	--button-secondary--border-hover: var(--swatch--brand);
 }
 /* theme dark */
 [data-theme="dark"],
@@ -28,29 +28,29 @@
 	--theme--background: var(--swatch--dark);
 	--theme--text: var(--swatch--light);
 	--theme--border: var(--swatch--light-fade);
-	/* button solid */
+	/* button primary */
 	--button--background: var(--swatch--brand);
-	--button--text: var(--swatch--dark);
+	--button--text: var(--swatch--brand-text);
 	--button--border: var(--swatch--brand);
 	--button--background-hover: var(--swatch--light);
 	--button--text-hover: var(--swatch--dark);
 	--button--border-hover: var(--swatch--light);
-	/* button outlined */
-	--button-outlined--background: var(--swatch--transparent);
-	--button-outlined--text: var(--swatch--light);
-	--button-outlined--border: var(--swatch--light-fade);
-	--button-outlined--background-hover: var(--swatch--brand);
-	--button-outlined--text-hover: var(--swatch--dark);
-	--button-outlined--border-hover: var(--swatch--brand);
+	/* button secondary */
+	--button-secondary--background: var(--swatch--transparent);
+	--button-secondary--text: var(--swatch--light);
+	--button-secondary--border: var(--swatch--light-fade);
+	--button-secondary--background-hover: var(--swatch--brand);
+	--button-secondary--text-hover: var(--swatch--brand-text);
+	--button-secondary--border-hover: var(--swatch--brand);
 }
-/* button outlined */
-[data-button-style="outlined"] {
-	--button--background: var(--button-outlined--background);
-	--button--text: var(--button-outlined--text);
-	--button--border: var(--button-outlined--border);
-	--button--background-hover: var(--button-outlined--background-hover);
-	--button--text-hover: var(--button-outlined--text-hover);
-	--button--border-hover: var(--button-outlined--border-hover);
+/* button secondary */
+[data-button-style="secondary"] {
+	--button--background: var(--button-secondary--background);
+	--button--text: var(--button-secondary--text);
+	--button--border: var(--button-secondary--border);
+	--button--background-hover: var(--button-secondary--background-hover);
+	--button--text-hover: var(--button-secondary--text-hover);
+	--button--border-hover: var(--button-secondary--border-hover);
 }
 /* apply colors */
 :is(c, :where([data-theme]:not([data-theme="inherit"]))) {
