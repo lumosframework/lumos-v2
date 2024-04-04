@@ -25,4 +25,8 @@
 [data-text-align-right="true"] { text-align: right !important; }
 /* max width */
 [data-max-width-none="true"] { max-width: none !important; }
+/* hide section if it has no cms items */
+[data-cms-check="true"]:not(:has(.w-dyn-item)) {
+	display: none;
+}
 </style>
