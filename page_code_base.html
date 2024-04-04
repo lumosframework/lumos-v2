@@ -1,6 +1,5 @@
 <style>
 :root {
-	--font--inherit: inherit;
 	--font-weight--inherit: inherit;
 	--font-weight--100: 100;
 	--font-weight--200: 200;
@@ -21,6 +20,10 @@ body {
 	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
 }
+h1, h2, h3, h4, h5, h6, p, label, blockquote {
+	margin-top: 0;
+  margin-bottom: 0;
+}
 button {
 	background-color: unset;
 	padding: unset;
@@ -38,12 +41,12 @@ img::selection {
 .w-richtext > *:last-child {
 	margin-bottom: 0;
 }
-.wf-empty[class*="--"], video.wf-empty {
-	padding: 0;
-}
 video {
 	width: 100%;
 	object-fit: cover;
+}
+video.wf-empty {
+	padding: 0;
 }
 svg {
 	display: block;
@@ -52,6 +55,7 @@ section, header, footer {
 	position: relative;
 }
 
+/* section padding */
 [data-padding-top="none"] { padding-top: var(--padding-vertical--none); }
 [data-padding-bottom="none"] { padding-bottom: var(--padding-vertical--none); }
 
