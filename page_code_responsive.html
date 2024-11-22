@@ -1,73 +1,30 @@
 <style>
-/* desktop */
+/* https://fluidbuilder.webflow.io/?design=90&max=90&min=20&f&g=--site--margin,3,1_--size--2rem,2,1.75_--size--2-5rem,2.5,2_--size--3rem,3,2.25_--size--3-5rem,3.5,2.375_--size--4rem,4,2.5_--size--4-5rem,4.5,2.75_--size--5rem,5,3_--size--5-5rem,5.5,3.25_--size--6rem,6,3.5_--size--6-5rem,6.5,3.75_--size--7rem,7,4_--size--7-5rem,7.5,4.25_--size--8rem,8,4.5_--size--8-5rem,8.5,4.75_--size--9rem,9,5_--size--9-5rem,9.5,5.25_--size--10rem,10,5.5_--size--11rem,11,5.75_--size--12rem,12,6_--size--13rem,13,6.5_--size--14rem,14,7_--size--15rem,15,7.5_--size--16rem,16,8 */
+
 :root {
-	/* custom */
-}
-/* tablet */
-@media screen and (max-width: 991px) {
-	:root {
-		/* custom */
-		--padding-horizontal--main: 2rem;
-		/* adaptive sizes */
-		--size--2rem: 1.75rem;
-		--size--2-5rem: 2.18rem;
-		--size--3rem: 2.52rem;
-		--size--3-5rem: 2.73rem;
-		--size--4rem: 3rem;
-		--size--4-5rem: 3.375rem;
-		--size--5rem: 3.75rem;
-		--size--5-5rem: 4.125rem;
-		--size--6rem: 4.5rem;
-		--size--6-5rem: 4.875rem;
-		--size--7rem: 5.25rem;
-		--size--7-5rem: 5.625rem;
-		--size--8rem: 6rem;
-		--size--8-5rem: 6.375rem;
-		--size--9rem: 6.75rem;
-		--size--9-5rem: 7.125rem;
-		--size--10rem: 7.5rem;
-		--size--11rem: 8.25rem;
-		--size--12rem: 9rem;
-		--size--13rem: 9.75rem;
-		--size--14rem: 10.5rem;
-		--size--15rem: 11.25rem;
-		--size--16rem: 12rem;
-	}
-}
-/* landscape */
-@media screen and (max-width: 767px) {
-	:root {
-		/* custom */
-		--padding-horizontal--main: 1rem;
-		/* adaptive sizes */
-		--size--2-5rem: 2rem;
-		--size--3rem: 2.25rem;
-		--size--3-5rem: 2.375rem;
-		--size--4rem: 2.5rem;
-		--size--4-5rem: 2.75rem;
-		--size--5rem: 3rem;
-		--size--5-5rem: 3.25rem;
-		--size--6rem: 3.5rem;
-		--size--6-5rem: 3.75rem;
-		--size--7rem: 4rem;
-		--size--7-5rem: 4.25rem;
-		--size--8rem: 4.5rem;
-		--size--8-5rem: 4.75rem;
-		--size--9rem: 5rem;
-		--size--9-5rem: 5.25rem;
-		--size--10rem: 5.5rem;
-		--size--11rem: 5.75rem;
-		--size--12rem: 6rem;
-		--size--13rem: 6.5rem;
-		--size--14rem: 7rem;
-		--size--15rem: 7.5rem;
-		--size--16rem: 8rem;
-	}
-}
-/* portrait */
-@media screen and (max-width: 479px) {
-	:root {
-		/* custom */
-	}
+	--site--margin: clamp(1rem, 0.428rem + 2.86vw, 3rem);
+	--size--2rem: clamp(1.75rem, 1.678rem + 0.36vw, 2rem);
+	--size--2-5rem: clamp(2rem, 1.858rem + 0.71vw, 2.5rem);
+	--size--3rem: clamp(2.25rem, 2.036rem + 1.07vw, 3rem);
+	--size--3-5rem: clamp(2.375rem, 2.053rem + 1.61vw, 3.5rem);
+	--size--4rem: clamp(2.5rem, 2.072rem + 2.14vw, 4rem);
+	--size--4-5rem: clamp(2.75rem, 2.25rem + 2.5vw, 4.5rem);
+	--size--5rem: clamp(3rem, 2.428rem + 2.86vw, 5rem);
+	--size--5-5rem: clamp(3.25rem, 2.608rem + 3.21vw, 5.5rem);
+	--size--6rem: clamp(3.5rem, 2.786rem + 3.57vw, 6rem);
+	--size--6-5rem: clamp(3.75rem, 2.964rem + 3.93vw, 6.5rem);
+	--size--7rem: clamp(4rem, 3.142rem + 4.29vw, 7rem);
+	--size--7-5rem: clamp(4.25rem, 3.322rem + 4.64vw, 7.5rem);
+	--size--8rem: clamp(4.5rem, 3.5rem + 5vw, 8rem);
+	--size--8-5rem: clamp(4.75rem, 3.678rem + 5.36vw, 8.5rem);
+	--size--9rem: clamp(5rem, 3.858rem + 5.71vw, 9rem);
+	--size--9-5rem: clamp(5.25rem, 4.036rem + 6.07vw, 9.5rem);
+	--size--10rem: clamp(5.5rem, 4.214rem + 6.43vw, 10rem);
+	--size--11rem: clamp(5.75rem, 4.25rem + 7.5vw, 11rem);
+	--size--12rem: clamp(6rem, 4.286rem + 8.57vw, 12rem);
+	--size--13rem: clamp(6.5rem, 4.642rem + 9.29vw, 13rem);
+	--size--14rem: clamp(7rem, 5rem + 10vw, 14rem);
+	--size--15rem: clamp(7.5rem, 5.358rem + 10.71vw, 15rem);
+	--size--16rem: clamp(8rem, 5.714rem + 11.43vw, 16rem);
 }
 </style>
