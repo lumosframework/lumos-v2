@@ -47,27 +47,22 @@
   --grid-10: repeat(10, minmax(0, 1fr));
   --grid-11: repeat(11, minmax(0, 1fr));
   --grid-12: repeat(12, minmax(0, 1fr));
-
-  --text-transform--none: none;
-  --text-transform--uppercase: uppercase;
-  --text-transform--capitalize: capitalize;
-  --text-transform--lowercase: lowercase;
-  --text-transform--inherit: inherit;
+  --_typography---text-transform--none: none;
+  --_typography---text-transform--uppercase: uppercase;
+  --_typography---text-transform--captialize: capitalize;
+  --_typography---text-transform--lowercase: lowercase;
+  --align--flex-start: flex-start;
+  --align--flex-center: center;
+  --align--flex-end: flex-end;
+  --align--text-left: left;
+  --align--text-center: center;
+  --align--text-right: right;
 }
 * {
 	vertical-align: bottom;
 }
-body {
-	text-transform: var(--text-main--text-transform);
-	font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-}
-label, blockquote {
-	font-size: inherit;
-	line-height: inherit;
-	font-weight: inherit;
-	margin-top: 0;
-	margin-bottom: 0;
+::before, ::after {
+	box-sizing: border-box;
 }
 button {
 	background-color: unset;
@@ -98,14 +93,16 @@ section, header, footer {
 img::selection {
 	background: transparent;
 }
+/* Typography */
+body {
+	text-transform: var(--_text-style---text-transform);
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
 a:not([class]) {
 	text-decoration: underline;
 }
-.w-richtext a {
-	position: relative;
-	z-index: 4;
-}
-[class*="u-text-style-"] > :where(h1,h2,h3,h4,h5,h6,p,blockquote) {
+h1,h2,h3,h4,h5,h6,p,blockquote,label {
 	font-family: inherit;
 	font-size: inherit;
 	font-weight: inherit;
@@ -113,16 +110,38 @@ a:not([class]) {
 	letter-spacing: inherit;
 	text-transform: inherit;
 	text-wrap: inherit;
-	margin-top: inherit;
-	margin-bottom: inherit;
-}
-:not(.u-margin-trim-off, .u-block-gap, .w-background-video) > :not(:not(.w-condition-invisible) ~ :not(.w-condition-invisible)) {
 	margin-top: 0;
-}
-:not(.u-margin-trim-off, .u-block-gap, .w-background-video) > :not(:has(~ :not(.w-condition-invisible))) {
 	margin-bottom: 0;
 }
+:is(.u-margin-trim, .u-rich-text) > :not(:not(.w-condition-invisible) ~ :not(.w-condition-invisible)) {
+	margin-top: 0;
+}
+:is(.u-margin-trim, .u-rich-text) > :not(:has(~ :not(.w-condition-invisible))) {
+	margin-bottom: 0;
+}
+.w-richtext a {
+	position: relative;
+	z-index: 4;
+}
+:is([class*="u-text-style-"], .u-rich-text :is(h1,h2,h3,h4,h5,h6,p))::before {
+	content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + var(--_text-style---trim-top));
+}
+:is([class*="u-text-style-"], .u-rich-text :is(h1,h2,h3,h4,h5,h6,p))::after {
+	content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + var(--_text-style---trim-bottom));
+}
+.u-line-clamp-1, .u-line-clamp-2, .u-line-clamp-3, .u-line-clamp-4 {
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.u-line-clamp-2 { -webkit-line-clamp: 2; }
+.u-line-clamp-3 { -webkit-line-clamp: 3; }
+.u-line-clamp-4 { -webkit-line-clamp: 4; }
 
+/* Hide */
 .u-hide-if-empty:empty,
 .u-hide-if-empty:not(:has(> :not(.w-condition-invisible))),
 .u-hide-if-empty-cms:not(:has(.w-dyn-item)),
@@ -132,14 +151,7 @@ a:not([class]) {
 	display: none !important;
 }
 
-.u-line-clamp-1, .u-line-clamp-2, .u-line-clamp-3, .u-line-clamp-4 {
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-}
-.u-line-clamp-2 { -webkit-line-clamp: 2; }
-.u-line-clamp-3 { -webkit-line-clamp: 3; }
-.u-line-clamp-4 { -webkit-line-clamp: 4; }
-
+/* Focus State */
 a, button, [tabindex],
 .w-checkbox-input--inputType-custom,
 .w-form-formradioinput--inputType-custom {
@@ -150,7 +162,7 @@ button:focus-visible,
 [tabindex]:focus-visible,
 .w-checkbox:has(:focus-visible) .w-checkbox-input--inputType-custom,
 .w-radio:has(:focus-visible) .w-form-formradioinput--inputType-custom {
-	outline-color: var(--theme--text);
+	outline-color: var(--_theme---text);
 	outline-width: var(--focus--width);
 	outline-style: solid;
 }
@@ -159,82 +171,7 @@ button:focus-visible,
 	box-shadow: none;
 }
 
-.u-block-gap {
-	--gap: var(--content-space--button-group-gap);
-	--gap-x: var(--gap);
-	--gap-y: var(--gap);
-}
-.u-block-gap > * {
-	margin-inline: calc(var(--gap-x) / 2);
-	margin-top: var(--gap-y);
-	vertical-align: inherit;
-}
-:where(.u-block-gap > *) {
-	display: inline-block;
-}
-.u-block-gap::before {
-	content: "";
-	display: block;
-	margin-bottom: calc(var(--gap-y) * -1);
-}
-
-.u-block-gap-vertical {
-	--gap: 0;
-	--margin: var(--gap);
-}
-.u-block-gap-vertical > * {
-	margin-top: var(--margin);
-	margin-bottom: 0;
-}
-
-.u-gap-0 { --gap: 0; }
-.u-gap-1 { --gap: var(--space--1); }
-.u-gap-2 { --gap: var(--space--2); }
-.u-gap-3 { --gap: var(--space--3); }
-.u-gap-4 { --gap: var(--space--4); }
-.u-gap-5 { --gap: var(--space--5); }
-.u-gap-6 { --gap: var(--space--6); }
-.u-gap-7 { --gap: var(--space--7); }
-.u-gap-8 { --gap: var(--space--8); }
-.u-gap-gutter { --gap: var(--site--gutter); }
-.u-gap-row-0 { --gap-y: 0; }
-.u-gap-row-1 { --gap-y: var(--space--1); }
-.u-gap-row-2 { --gap-y: var(--space--2); }
-.u-gap-row-3 { --gap-y: var(--space--3); }
-.u-gap-row-4 { --gap-y: var(--space--4); }
-.u-gap-row-5 { --gap-y: var(--space--5); }
-.u-gap-row-6 { --gap-y: var(--space--6); }
-.u-gap-row-7 { --gap-y: var(--space--7); }
-.u-gap-row-8 { --gap-y: var(--space--8); }
-.u-gap-row-gutter { --gap-y: var(--site--gutter); }
-
-.u-child-contain > * {
-	display: inline-block;
-	width: 100%;
-	max-width: inherit;
-	margin-top: 0;
-}
-
-.u-text-margin-none :is([class*="u-text-style-"],h1,h2,h3,h4,h5,h6,p) {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-[data-padding-top="none"] { padding-top: var(--section-space--none); }
-[data-padding-bottom="none"] { padding-bottom: var(--section-space--none); }
-
-[data-padding-top="even"] { padding-top: var(--site--margin); }
-[data-padding-bottom="even"] { padding-bottom: var(--site--margin); }
-
-[data-padding-top="small"] { padding-top: var(--section-space--small); }
-[data-padding-bottom="small"] { padding-bottom: var(--section-space--small); }
-
-[data-padding-top="main"] { padding-top: var(--section-space--main); }
-[data-padding-bottom="main"] { padding-bottom: var(--section-space--main); }
-
-[data-padding-top="large"] { padding-top: var(--section-space--large); }
-[data-padding-bottom="large"] { padding-bottom: var(--section-space--large); }
-
+/* Global / Clickable Component */
 .wf-design-mode .g_clickable_wrap {
 	z-index: 0;
 }
